@@ -1,2 +1,2 @@
 # Memory
-School project
+School project written in HTML, CSS and JavaScript
