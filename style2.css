@@ -16,7 +16,7 @@ body{
 }
 .card{
     background-image: url(images/unicornBack.png);
-    background-color: bisque;
+    background-color: white;
     border-radius: 5px;
     transition: all 0.1s linear;
     display: inline-block;
@@ -30,32 +30,32 @@ body{
     cursor: pointer;
 }
 .card1{
-    background-color: blue;
+    background-color: white;
     background-image: url(images/unicorn1.jpg);
     background-size: contain;
 }
 .card2{
-    background-color: green;
+    background-color: white;
     background-image: url(images/unicorn2.png);
     background-size: contain;
 }
 .card3{
-    background-color: red;
+    background-color: white;
     background-image: url(images/unicorn3.jpg);
     background-size: contain;
 }
 .card4{
-    background-color: hotpink;
+    background-color: white;
     background-image: url(images/unicorn4.png);
     background-size: contain;
 }
 .card5{
-    background-color: yellow;
+    background-color: white;
     background-image: url(images/unicorn5.jpg);
     background-size: contain;
 }
 .card6{
-    background-color: aqua;
+    background-color: white;
     background-image: url(images/unicorn6.jpeg);
     background-size: contain;
 }
@@ -65,7 +65,7 @@ body{
     background-size: contain;
 }
 .card8{
-    background-color: darkviolet;
+    background-color: white;
     background-image: url(images/apple.png);
-    
+
 }
