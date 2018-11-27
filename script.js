@@ -34,7 +34,7 @@ const cards = [
     { id: 8, className: 'card unplayed'},
     { id: 8, className: 'card unplayed'},
 ];
-let delay = 1200;
+let delay = 800;
 let firstCard = 0;
 let secondCard = 0;
 let previousTarget = 0;
@@ -51,7 +51,7 @@ for (let i = 0; i < cards.length; i++) {
 const boardCards = document.querySelectorAll('.card');
 Array.from(boardCards).forEach((boardCard) => {
     boardCard.addEventListener('click', function selectCard() {
-        if (previousTarget === boardCard){
+        if (previousTarget === boardCard || boardCard.classList.contains('done')){
             previousTarget = boardCard;
         }else{
             boardCard.classList.remove('unplayed');
@@ -77,7 +77,14 @@ Array.from(boardCards).forEach((boardCard) => {
                 }else{
                     let cardsDone = document.querySelectorAll('.chosen');
                     Array.from(cardsDone).forEach((cardDone) => {
-                        setTimeout(turnBackCard(cardDone), delay);
+                        setTimeout(function(){
+                          firstCard = 0;
+                          secondCard = 0;
+                          console.log('hej');
+                          cardDone.classList.remove('chosen');
+                          cardDone.classList.remove(`card${cardDone.dataset.cardid}`);
+                          cardDone.classList.add('unplayed');
+                        }, delay);
                     });
                 }
             }
