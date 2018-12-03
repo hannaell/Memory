@@ -38,6 +38,7 @@ button {
   border-radius: 5px;
   color: #693161;
   font-size: 3vh;
+  cursor: pointer;
 }
 
 .win {
@@ -72,6 +73,7 @@ button {
   transform: scale(1);
   transform-style: preserve-3d;
   transition: transform .5s;
+  cursor: pointer;
 }
 
 .game-card:active {
