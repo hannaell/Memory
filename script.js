@@ -1,4 +1,5 @@
 const cards = document.querySelectorAll('.game-card')
+const restartGame = document.querySelector('.restart-game');
 
 let flippedCard = false;
 let lockBoard = false;
@@ -44,8 +45,8 @@ function checkForMatch() {
 
 // Function for removing eventListner
 function disableCards() {
-  firstCard.removeEventListner('click', flipCard);
-  secondCard.removeEventListner('click', flipCard);
+  firstCard.removeEventListener('click', flipCard);
+  secondCard.removeEventListener('click', flipCard);
 
   resetBoard();
 }
@@ -67,11 +68,32 @@ function resetBoard() {
   [firstCard, secondCard] = [null, null];
 }
 
-(function shuffle() {
+function shuffle() {
   cards.forEach(card => {
     let randomPos = Math.floor(Math.random() * 16);
     card.style.order = randomPos;
   });
-})();
+};
 
 cards.forEach(card => card.addEventListener('click', flipCard));
+
+restartGame.addEventListener('click', () => {
+  cards.forEach(card => {
+    card.classList.remove('flip');
+    card.addEventListener('click', flipCard);
+});
+
+  setTimeout(() => {
+    shuffle();
+    resetBoard();
+  }, 500);
+
+});
+// function startGame() {
+// 	cards.forEach(card => {
+// 		let randImg = Math.floor(Math.random() * 16);
+// 		card.style.order = randImg;
+// 	});
+// };
+//
+ window.onload = shuffle();
