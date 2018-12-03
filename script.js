@@ -1,9 +1,14 @@
 const cards = document.querySelectorAll('.game-card')
 const restartGame = document.querySelector('.restart-game');
 
+const win =  document.querySelector('.win');
+const h1header = document.querySelector('.h1-header');
+
 let flippedCard = false;
 let lockBoard = false;
 let firstCard, secondCard;
+
+let pairs = 0;
 
 // Function for fliping the game cards
 function flipCard() {
@@ -27,12 +32,26 @@ function flipCard() {
   // flippedCard = flase;
 
   checkForMatch();
+
 }
 
 // Function for checking if cards are matching
 function checkForMatch() {
   if (firstCard.dataset.unicorn === secondCard.dataset.unicorn) {
     disableCards();
+    pairs++;
+
+    if (pairs > 7) {
+      setTimeout( () => {
+        win.style.display = 'block';
+        h1header.textContent = 'You win!!';
+
+      }, 500)
+      setTimeout( () => {
+        win.style.display = 'none';
+
+      }, 5000)
+    }
     return;
   }
 
@@ -89,11 +108,5 @@ restartGame.addEventListener('click', () => {
   }, 500);
 
 });
-// function startGame() {
-// 	cards.forEach(card => {
-// 		let randImg = Math.floor(Math.random() * 16);
-// 		card.style.order = randImg;
-// 	});
-// };
-//
+
  window.onload = shuffle();
