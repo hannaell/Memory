@@ -99,6 +99,7 @@ restartGame.addEventListener('click', () => {
 
   setTimeout(() => {
     shuffle();
+    h1header.textContent = 'Unicorn Memory';
     resetBoard();
   }, 500);
 
