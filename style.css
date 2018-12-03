@@ -27,7 +27,7 @@ body {
 }
 
 .game-card {
-  background-color: white;
+  /* background-color: white; */
   height: 20vh;
   width: 20vh;
   margin: 9px;
