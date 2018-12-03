@@ -19,7 +19,7 @@ function flipCard() {
   if (this === firstCard) {
     return;
   }
-  // this.classList.toggle('flip');
+
   this.classList.add('flip');
 
   if (!flippedCard) {
@@ -29,7 +29,6 @@ function flipCard() {
   }
 
   secondCard = this;
-  // flippedCard = flase;
 
   checkForMatch();
 
@@ -57,9 +56,6 @@ function checkForMatch() {
 
   unflipCards();
 
-  // Does the same as the if above
-  // let isMatch = firstCard.dataset.unicorn === secondCard.dataset.unicorn;
-  // isMatch ? disableCards() : unflipCards();
 }
 
 // Function for removing eventListner
@@ -77,7 +73,6 @@ function unflipCards() {
     firstCard.classList.remove('flip');
     secondCard.classList.remove('flip');
 
-    // lockBoard = false;
     resetBoard();
   }, 1500);
 }
@@ -100,7 +95,7 @@ restartGame.addEventListener('click', () => {
   cards.forEach(card => {
     card.classList.remove('flip');
     card.addEventListener('click', flipCard);
-});
+  });
 
   setTimeout(() => {
     shuffle();
@@ -109,4 +104,4 @@ restartGame.addEventListener('click', () => {
 
 });
 
- window.onload = shuffle();
+window.onload = shuffle();
